@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AnimalComponent } from './components/animal/animal.component';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AnimalComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html'
 })
 export class AppComponent {

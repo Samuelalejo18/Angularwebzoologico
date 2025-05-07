@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class AnimalService {
 
   apiUri = '/api/getAnimals';
+  apiUriPost = '/api/animalsPost';
   httpOptions = new HttpHeaders().set('Content-Type', 'application/json');
 
   constructor(private http: HttpClient) { }
@@ -17,4 +18,10 @@ export class AnimalService {
     return this.http.get<any>(this.apiUri)
   }
 
+  newAnimal(data: any): Observable<any> {
+    return this.http.post<any>(
+      this.apiUriPost, data,
+      { headers: this.httpOptions }
+    )
+  }
 }
